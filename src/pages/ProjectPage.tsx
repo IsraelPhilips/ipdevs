@@ -126,7 +126,13 @@ export function ProjectPage() {
                 key={item.src}
                 className={`gallery-card${item.isPlaceholder ? " gallery-card-placeholder" : ""}`}
               >
-                <img src={item.src} alt={item.alt} />
+                <div className="gallery-media-shell">
+                  <img
+                    className={item.isPlaceholder ? "gallery-image gallery-image-placeholder" : "gallery-image"}
+                    src={item.src}
+                    alt={item.alt}
+                  />
+                </div>
                 <figcaption>{item.note}</figcaption>
               </figure>
             ))}
@@ -136,4 +142,3 @@ export function ProjectPage() {
     </>
   );
 }
-

@@ -356,6 +356,7 @@ select {
 .project-preview {
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  background: rgba(7, 17, 31, 0.9);
 }
 
 .project-preview img,
@@ -389,6 +390,7 @@ select {
 .project-footer {
   justify-content: space-between;
   margin-top: 1.1rem;
+  align-items: flex-start;
 }
 
 .text-link {
@@ -480,6 +482,29 @@ select {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.gallery-media-shell {
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  margin: -1.4rem -1.4rem 0;
+  padding: 1.1rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(6, 15, 27, 0.92);
+}
+
+.gallery-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.gallery-image-placeholder {
+  width: 100%;
+}
+
 .gallery-card figcaption {
   margin-top: 1rem;
   color: var(--muted);
@@ -488,6 +513,11 @@ select {
 
 .gallery-card-placeholder {
   border-style: dashed;
+}
+
+.gallery-card {
+  overflow: hidden;
+  border-radius: 0;
 }
 
 .site-footer {
@@ -550,6 +580,59 @@ select {
     width: 100%;
   }
 
+  .hero-copy h1 {
+    font-size: clamp(2.15rem, 10vw, 3.25rem);
+  }
+
+  .hero-kicker {
+    line-height: 1.6;
+  }
+
+  .hero-actions .button,
+  .inline-actions .button {
+    width: 100%;
+  }
+
+  .project-grid {
+    gap: 1rem;
+  }
+
+  .project-preview {
+    aspect-ratio: auto;
+    overflow: visible;
+  }
+
+  .project-preview img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .project-heading h3 {
+    font-size: 1.35rem;
+  }
+
+  .project-footer {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .tag-row {
+    gap: 0.55rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+  }
+
+  .gallery-card {
+    border-radius: 0;
+  }
+
+  .gallery-media-shell {
+    margin: -1.2rem -1.2rem 0;
+    padding: 0.8rem;
+  }
+
   .section-heading-row,
   .detail-topbar {
     flex-direction: column;
@@ -569,4 +652,3 @@ select {
     transition: none !important;
   }
 }
-
