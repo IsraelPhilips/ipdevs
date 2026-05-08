@@ -1,21 +1,13 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import type { ProjectCaseStudy } from "../content/types";
 
 type ProjectCardProps = {
   project: ProjectCaseStudy;
-  index: number;
 };
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <motion.article
-      className="project-card"
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.55, delay: index * 0.08 }}
-    >
+    <article className="project-card">
       <div className="project-preview">
         <img src={project.gallery[0].src} alt={project.gallery[0].alt} />
       </div>
@@ -39,7 +31,6 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </Link>
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 }
-

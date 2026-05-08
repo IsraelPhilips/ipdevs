@@ -4,15 +4,15 @@ import ghealeadTherapistDashboard from "../assets/projects/ghealead/ghealead-the
 import iwacumoAdminOverview from "../assets/projects/iwacumo/iwacumo-admin-overview.png";
 import iwacumoPublisherDashboard from "../assets/projects/iwacumo/iwacumo-publisher-dashboard.png";
 import iwacumoStorefront from "../assets/projects/iwacumo/iwacumo-storefront.png";
-import prepadiExamSession from "../assets/projects/prepadi/prepadi-exam-session.png";
-import prepadiSubjectSelection from "../assets/projects/prepadi/prepadi-subject-selection.png";
 import prymagentChatDashboard from "../assets/projects/prymagent/prymagent-chat-dashboard.png";
+import prymagentFeatureList from "../assets/projects/prymagent/prymagent-feature-list.png";
+import prepadiAdmin from "../assets/projects/prepadi/prepadi-admin.png";
+import prepadiHomepage from "../assets/projects/prepadi/prepadi-homepage.png";
 import workieTechieHomepage from "../assets/projects/workietechie/workietechie-homepage.png";
-import prymagentPlaceholder from "../assets/placeholders/prymagent-placeholder.svg";
-import workieTechiePlaceholder from "../assets/placeholders/workietechie-placeholder.svg";
+import workieTechieAdmin from "../assets/projects/workietechie/workie-techie-admin.png";
 import type {
-  CapabilityGroup,
   ProjectCaseStudy,
+  TechStackGroup,
   WorkflowTool,
 } from "./types";
 
@@ -24,30 +24,18 @@ export const heroMetrics = [
   "Practical AI systems designed to save time and reduce operational drag",
 ];
 
-export const capabilityGroups: CapabilityGroup[] = [
+export const techStackGroups: TechStackGroup[] = [
   {
-    title: "Product engineering",
-    items: [
-      "Frontend systems that feel polished, fast, and easy to trust",
-      "Full-stack product delivery from flows and dashboards to platform logic",
-      "Responsive interfaces designed for real users, not just demos",
-    ],
+    title: "Frontend",
+    items: ["React", "Vite", "Next.js", "TypeScript"],
   },
   {
-    title: "AI and automation",
-    items: [
-      "AI features that solve real operational problems instead of adding noise",
-      "Workflow automation for reporting, support, finance, and content operations",
-      "AI-assisted product experiences that fit naturally into existing user habits",
-    ],
+    title: "UI systems",
+    items: ["Tailwind CSS", "Responsive UI", "Design Systems", "Product UX"],
   },
   {
-    title: "Scaling with clarity",
-    items: [
-      "Role-based SaaS platforms with clear permissions and tenant boundaries",
-      "Commerce, payout, and payment-heavy systems built with reliability in mind",
-      "Readable architecture and maintainable UI systems for teams that need to move",
-    ],
+    title: "Backend + AI",
+    items: ["Django", "Prisma", "AI Workflows", "Payment Flows"],
   },
 ];
 
@@ -104,10 +92,9 @@ export const projects: ProjectCaseStudy[] = [
         note: "The live assistant experience is centered on direct task execution inside chat.",
       },
       {
-        src: prymagentPlaceholder,
-        alt: "Placeholder product visual for PrymAgent reporting flows",
-        note: "Reserved for an additional reporting or invoice state once more production screenshots are available.",
-        isPlaceholder: true,
+        src: prymagentFeatureList,
+        alt: "PrymAgent feature list and product flow preview",
+        note: "The supporting product view reinforces how invoicing, logging, and reporting stay simple inside one AI-native workflow.",
       },
     ],
   },
@@ -191,14 +178,14 @@ export const projects: ProjectCaseStudy[] = [
     liveUrlEnvKey: "VITE_PROJECT_PREPADI_URL",
     gallery: [
       {
-        src: prepadiExamSession,
-        alt: "Prepadi exam session interface",
-        note: "The exam experience is built to feel focused, calm, and dependable under timed conditions.",
+        src: prepadiHomepage,
+        alt: "Prepadi homepage and product overview preview",
+        note: "The front-facing experience introduces the platform with clarity for schools, organizations, and learners.",
       },
       {
-        src: prepadiSubjectSelection,
-        alt: "Prepadi subject selection interface",
-        note: "Students can move through preparation flows without UI friction or unnecessary complexity.",
+        src: prepadiAdmin,
+        alt: "Prepadi admin dashboard preview",
+        note: "The administrative view keeps exams, users, and school operations organized in one structured workspace.",
       },
     ],
   },
@@ -239,10 +226,9 @@ export const projects: ProjectCaseStudy[] = [
         note: "The marketplace experience introduces trust and clarity from the very first screen.",
       },
       {
-        src: workieTechiePlaceholder,
-        alt: "Placeholder workflow visual for WorkieTechie assignment journeys",
-        note: "Reserved for an additional operational or dashboard screenshot once more assets are available.",
-        isPlaceholder: true,
+        src: workieTechieAdmin,
+        alt: "WorkieTechie admin workflow preview",
+        note: "Operational control stays visible through a clearer admin view for approvals, assignments, and marketplace oversight.",
       },
     ],
   },
@@ -298,4 +284,3 @@ export const projects: ProjectCaseStudy[] = [
 
 export const softwareSeoDescription =
   "Software engineering portfolio for Israel Philips, highlighting AI-powered product delivery, polished frontend systems, and scalable full-stack work.";
-

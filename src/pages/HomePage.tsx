@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import { ProjectCard } from "../components/ProjectCard";
 import { Section } from "../components/Section";
 import {
-  capabilityGroups,
   heroMetrics,
   projects,
   siteTitle,
   softwareSeoDescription,
+  techStackGroups,
   workflowTools,
 } from "../content/siteContent";
 import { getMailtoLink, links } from "../utils/env";
@@ -87,27 +87,30 @@ export function HomePage() {
         copy="These case studies show how I approach AI products, marketplaces, multi-tenant systems, and mission-critical user flows."
       >
         <div className="project-grid">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} index={index} />
+          {projects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </Section>
 
       <Section
-        id="capabilities"
-        eyebrow="Capabilities"
-        title="A product-minded engineering partner for serious builds"
-        copy="I help founders and teams ship clean interfaces, dependable platform logic, and AI-enabled features without turning the product into a buzzword parade."
+        id="stack"
+        eyebrow="Tech stack"
+        title="The tools I use to ship clean, modern product experiences"
+        copy="Straight to the point: strong frontend delivery, dependable product systems, and practical AI workflows."
       >
-        <div className="capability-grid">
-          {capabilityGroups.map((group) => (
-            <article key={group.title} className="info-card">
+        <div className="stack-grid">
+          {techStackGroups.map((group) => (
+            <article key={group.title} className="stack-card">
+              <span className="stack-card-kicker">{group.title}</span>
               <h3>{group.title}</h3>
-              <ul>
+              <div className="stack-chip-grid">
                 {group.items.map((item) => (
-                  <li key={item}>{item}</li>
+                  <span key={item} className="stack-chip">
+                    {item}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </article>
           ))}
         </div>
@@ -178,4 +181,3 @@ export function HomePage() {
     </>
   );
 }
-

@@ -23,7 +23,7 @@ export type ProjectCaseStudy = {
   gallery: ProjectGalleryItem[];
 };
 
-export type CapabilityGroup = {
+export type TechStackGroup = {
   title: string;
   items: string[];
 };
@@ -32,4 +32,3 @@ export type WorkflowTool = {
   name: string;
   use: string;
 };
-
