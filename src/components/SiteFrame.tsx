@@ -4,7 +4,7 @@ import { links } from "../utils/env";
 
 const navItems = [
   { label: "Projects", href: "/#projects" },
-  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Tech Stack", href: "/#stack" },
   { label: "Workflow", href: "/#workflow" },
   { label: "Connect", href: "/#contact" },
 ];
@@ -28,16 +28,14 @@ export function SiteFrame() {
             </a>
           ))}
         </nav>
-        {links.linkedIn ? (
-          <a
-            className="button button-secondary header-cta"
-            href={links.linkedIn}
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-        ) : null}
+        <a
+          className="button button-secondary header-cta"
+          href={links.linkedIn}
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
       </header>
       <AnimatePresence mode="wait">
         <motion.main
@@ -54,14 +52,11 @@ export function SiteFrame() {
         <p>Building beautifully useful software for teams that want clarity, speed, and real AI value.</p>
         <div className="footer-links">
           <a href="/">Home</a>
-          {links.linkedIn ? (
-            <a href={links.linkedIn} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-          ) : null}
+          <a href={links.linkedIn} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
         </div>
       </footer>
     </div>
   );
 }
-

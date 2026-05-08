@@ -26,16 +26,24 @@ export const heroMetrics = [
 
 export const techStackGroups: TechStackGroup[] = [
   {
-    title: "Frontend",
-    items: ["React", "Vite", "Next.js", "TypeScript"],
+    title: "Front-End Development",
+    items: [
+      "JavaScript",
+      "Reactjs",
+      "Nextjs",
+      "TypeScript",
+      "React Native",
+      "Tailwind CSS",
+      "Shadcn",
+    ],
   },
   {
-    title: "UI systems",
-    items: ["Tailwind CSS", "Responsive UI", "Design Systems", "Product UX"],
+    title: "Backend Development",
+    items: ["Python", "Django", "Nextjs + Prisma", "PostgreSQL", "AWS", "GCP"],
   },
   {
-    title: "Backend + AI",
-    items: ["Django", "Prisma", "AI Workflows", "Payment Flows"],
+    title: "AI Specialization",
+    items: ["Python", "RAG (Retrieval Augmented generation)", "AI Automation"],
   },
 ];
 

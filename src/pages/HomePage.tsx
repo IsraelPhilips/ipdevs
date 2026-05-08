@@ -31,7 +31,7 @@ export function HomePage() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="hero-kicker">Software Engineer • AI Developer • Product Builder</span>
-          <h1>I build polished digital products and practical AI systems people actually use.</h1>
+          <h1>I build polished software and practical AI systems people actually use.</h1>
           <p className="hero-description">
             I am Israel Philips, a software engineer and AI developer with 6+ years of
             experience building for startups, operators, and global-facing teams. My work
@@ -42,16 +42,17 @@ export function HomePage() {
             <a className="button" href="#projects">
               Explore selected work
             </a>
-            {links.linkedIn ? (
-              <a
-                className="button button-secondary"
-                href={links.linkedIn}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Connect on LinkedIn
-              </a>
-            ) : null}
+            <a
+              className="button button-secondary"
+              href={links.linkedIn}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Connect on LinkedIn
+            </a>
+            <a className="button button-ghost" href={mailtoLink}>
+              Send an email
+            </a>
           </div>
         </motion.div>
 
@@ -81,23 +82,10 @@ export function HomePage() {
       </section>
 
       <Section
-        id="projects"
-        eyebrow="Selected projects"
-        title="Work that blends strong product thinking with reliable execution"
-        copy="These case studies show how I approach AI products, marketplaces, multi-tenant systems, and mission-critical user flows."
-      >
-        <div className="project-grid">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
-      </Section>
-
-      <Section
         id="stack"
         eyebrow="Tech stack"
-        title="The tools I use to ship clean, modern product experiences"
-        copy="Straight to the point: strong frontend delivery, dependable product systems, and practical AI workflows."
+        title="The stack I use across frontend, backend, and AI delivery"
+        copy="A focused toolset for product UI, platform systems, mobile builds, cloud-backed apps, and practical AI implementation."
       >
         <div className="stack-grid">
           {techStackGroups.map((group) => (
@@ -112,6 +100,19 @@ export function HomePage() {
                 ))}
               </div>
             </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        id="projects"
+        eyebrow="Selected projects"
+        title="Work that blends strong product thinking with reliable execution"
+        copy="These case studies show how I approach AI products, marketplaces, multi-tenant systems, and mission-critical user flows."
+      >
+        <div className="project-grid">
+          {projects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </Section>
@@ -146,21 +147,17 @@ export function HomePage() {
         copy="If you are building something ambitious and want someone who can pair product taste with dependable execution, I would love to connect."
         actions={
           <div className="inline-actions">
-            {links.linkedIn ? (
-              <a
-                className="button"
-                href={links.linkedIn}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Reach out on LinkedIn
-              </a>
-            ) : null}
-            {mailtoLink ? (
-              <a className="button button-secondary" href={mailtoLink}>
-                Send an email
-              </a>
-            ) : null}
+            <a
+              className="button"
+              href={links.linkedIn}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Reach out on LinkedIn
+            </a>
+            <a className="button button-secondary" href={mailtoLink}>
+              Send an email
+            </a>
           </div>
         }
       >

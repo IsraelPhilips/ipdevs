@@ -1,15 +1,23 @@
 const clean = (value?: string) => value?.trim() || undefined;
 
+const fallbackLinks = {
+  linkedIn: "https://www.linkedin.com/in/israel-philips-0ab274202",
+  email: "israelphils.tech@gmail.com",
+} as const;
+
+const fallbackProjectUrls: Partial<Record<keyof ImportMetaEnv, string>> = {
+  VITE_PROJECT_PRYMAGENT_URL: "https://agent.prymshare.com",
+  VITE_PROJECT_IWACUMO_URL: "https://www.iwacumo.com",
+  VITE_PROJECT_PREPADI_URL: "http://www.prepadi.online",
+  VITE_PROJECT_GHEALEAD_URL: "https://www.ghealead.com",
+};
+
 export const links = {
-  linkedIn: clean(import.meta.env.VITE_LINKEDIN_URL),
-  email: clean(import.meta.env.VITE_CONTACT_EMAIL),
+  linkedIn: clean(import.meta.env.VITE_LINKEDIN_URL) ?? fallbackLinks.linkedIn,
+  email: clean(import.meta.env.VITE_CONTACT_EMAIL) ?? fallbackLinks.email,
 };
 
 export const getMailtoLink = () => {
-  if (!links.email) {
-    return undefined;
-  }
-
   return `mailto:${links.email}`;
 };
 
@@ -18,6 +26,5 @@ export const getProjectUrl = (envKey?: keyof ImportMetaEnv) => {
     return undefined;
   }
 
-  return clean(import.meta.env[envKey]);
+  return clean(import.meta.env[envKey]) ?? fallbackProjectUrls[envKey];
 };
-

@@ -183,7 +183,6 @@ export function ProjectPage() {
                     />
                   </div>
                 </button>
-                <figcaption>{item.note}</figcaption>
               </figure>
             ))}
           </div>
@@ -211,8 +210,9 @@ export function ProjectPage() {
                   type="button"
                   className="gallery-modal-close"
                   onClick={() => setActiveGalleryIndex(null)}
+                  aria-label="Close image gallery"
                 >
-                  Close
+                  <span aria-hidden="true">+</span>
                 </button>
               </div>
               <div className="gallery-modal-stage">
@@ -227,7 +227,7 @@ export function ProjectPage() {
                     }
                     aria-label="View previous image"
                   >
-                    Prev
+                    <span aria-hidden="true">&lsaquo;</span>
                   </button>
                 ) : null}
                 <img
@@ -242,11 +242,10 @@ export function ProjectPage() {
                     onClick={() => setActiveGalleryIndex((activeGalleryIndex + 1) % project.gallery.length)}
                     aria-label="View next image"
                   >
-                    Next
+                    <span aria-hidden="true">&rsaquo;</span>
                   </button>
                 ) : null}
               </div>
-              <p className="gallery-modal-note">{activeGalleryItem.note}</p>
             </div>
           </div>
         ) : null}
