@@ -120,23 +120,30 @@ export function HomePage() {
       <Section
         id="workflow"
         eyebrow="Engineering workflow"
-        title="I use modern tooling to strengthen delivery speed, review quality, and implementation depth"
-        copy="AI-assisted tools are part of my workflow, but always under clear engineering judgment. I use them to support architecture thinking, execution speed, and review loops without lowering standards."
+        title="AI-assisted workflow when needed"
+        copy="Used selectively to support implementation, review, and controlled experimentation without replacing engineering judgment."
       >
-        <div className="workflow-grid">
+        <div className="workflow-panel">
+          <p className="workflow-summary">
+            I use AI tools as support systems, not substitutes for product thinking or code
+            quality. The value is in sharper implementation passes, clearer review loops, and
+            focused experimentation when it genuinely helps the work.
+          </p>
+          <div className="workflow-chip-cloud">
           {workflowTools.map((tool) => (
-            <motion.article
+            <motion.div
               key={tool.name}
-              className="workflow-card"
+              className="workflow-chip-card"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5 }}
             >
               <span className="workflow-label">{tool.name}</span>
-              <p>{tool.use}</p>
-            </motion.article>
+              <span className="workflow-chip-copy">{tool.use}</span>
+            </motion.div>
           ))}
+          </div>
         </div>
       </Section>
 

@@ -9,6 +9,7 @@ const fallbackProjectUrls: Partial<Record<keyof ImportMetaEnv, string>> = {
   VITE_PROJECT_PRYMAGENT_URL: "https://agent.prymshare.com",
   VITE_PROJECT_IWACUMO_URL: "https://www.iwacumo.com",
   VITE_PROJECT_PREPADI_URL: "http://www.prepadi.online",
+  VITE_PROJECT_WORKIETECHIE_URL: "https://workietechie.com",
   VITE_PROJECT_GHEALEAD_URL: "https://www.ghealead.com",
 };
 
