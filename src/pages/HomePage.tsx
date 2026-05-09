@@ -119,9 +119,9 @@ export function HomePage() {
 
       <Section
         id="workflow"
-        eyebrow="AI workflow"
-        title="I use modern AI coding tools to move faster without lowering the bar"
-        copy="AI is part of my engineering workflow, but only when it helps the output become more robust, thoughtful, and production-ready."
+        eyebrow="Engineering workflow"
+        title="I use modern tooling to strengthen delivery speed, review quality, and implementation depth"
+        copy="AI-assisted tools are part of my workflow, but always under clear engineering judgment. I use them to support architecture thinking, execution speed, and review loops without lowering standards."
       >
         <div className="workflow-grid">
           {workflowTools.map((tool) => (

@@ -50,15 +50,15 @@ export const techStackGroups: TechStackGroup[] = [
 export const workflowTools: WorkflowTool[] = [
   {
     name: "Codex",
-    use: "Accelerates architecture setup, implementation speed, and production-ready refinement without losing code quality.",
+    use: "Useful for structured implementation support, architecture exploration, and tightening delivery speed on clearly defined work.",
   },
   {
     name: "Claude Code",
-    use: "Supports deep reasoning, structured problem solving, and sharper review loops on large or fast-moving builds.",
+    use: "Helpful for deeper reasoning, careful tradeoff analysis, and stronger review passes on larger or more layered product work.",
   },
   {
     name: "AntiGravity",
-    use: "Helps with AI-native experimentation, rapid workflow iteration, and practical agentic product exploration.",
+    use: "Applied selectively when testing automation ideas, agent workflows, or product experiments that need fast iteration with control.",
   },
 ];
 

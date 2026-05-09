@@ -865,7 +865,7 @@ select {
     border-radius: 20px;
   }
 
-  .gallery-modal-topbar,
+  .gallery-modal-topbar {
     align-items: flex-start;
   }
 
