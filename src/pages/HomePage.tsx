@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import { ProjectCard } from "../components/ProjectCard";
 import { Section } from "../components/Section";
 import {
@@ -167,21 +166,7 @@ export function HomePage() {
             </a>
           </div>
         }
-      >
-        <div className="cta-panel">
-          <div>
-            <span className="section-eyebrow">What I bring</span>
-            <h3>Calm delivery. Strong product judgment. Useful AI.</h3>
-          </div>
-          <p>
-            From dashboards and marketplaces to AI-enabled operational tools, I focus on
-            building systems that look sharp, work clearly, and help teams move forward.
-          </p>
-          <Link className="text-link" to="/projects/prymagent">
-            Start with the PrymAgent case study
-          </Link>
-        </div>
-      </Section>
+      />
     </>
   );
 }

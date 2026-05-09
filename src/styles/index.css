@@ -272,6 +272,18 @@ select {
   flex-wrap: wrap;
 }
 
+.section-actions {
+  align-self: center;
+}
+
+.inline-actions {
+  align-items: stretch;
+}
+
+.inline-actions .button {
+  min-height: 3.2rem;
+}
+
 .hero-panel {
   padding: 1.6rem;
 }
