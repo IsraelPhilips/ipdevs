@@ -2,12 +2,21 @@ import ghealeadAdminAnalytics from "../assets/projects/ghealead/ghealead-admin-a
 import ghealeadClientDashboard from "../assets/projects/ghealead/ghealead-client-dashboard.png";
 import ghealeadTherapistDashboard from "../assets/projects/ghealead/ghealead-therapist-dashboard.png";
 import iwacumoAdminOverview from "../assets/projects/iwacumo/iwacumo-admin-overview.png";
+import iwacumoLibrary from "../assets/projects/iwacumo/iwacumo-library.png";
+import iwacumoPlatformLedger from "../assets/projects/iwacumo/iwacumo-platform-ledger.png";
 import iwacumoPublisherDashboard from "../assets/projects/iwacumo/iwacumo-publisher-dashboard.png";
+import iwacumoPublishersPortal from "../assets/projects/iwacumo/iwacumo-publishers-portal.png";
+import iwacumoReaderPortal from "../assets/projects/iwacumo/iwacumo-reader-portal.png";
 import iwacumoStorefront from "../assets/projects/iwacumo/iwacumo-storefront.png";
+import iwacumoSystemSettings from "../assets/projects/iwacumo/iwacumo-system-settings.png";
 import prymagentChatDashboard from "../assets/projects/prymagent/prymagent-chat-dashboard.png";
 import prymagentFeatureList from "../assets/projects/prymagent/prymagent-feature-list.png";
 import prepadiAdmin from "../assets/projects/prepadi/prepadi-admin.png";
+import prepadiExamSession from "../assets/projects/prepadi/prepadi-exam-session.png";
 import prepadiHomepage from "../assets/projects/prepadi/prepadi-homepage.png";
+import prepadiOrgExam from "../assets/projects/prepadi/prepadi-org-exam.png";
+import workieClientDashboard from "../assets/projects/workietechie/workie-client-dashboard.png";
+import workieProfessionalPortfolio from "../assets/projects/workietechie/workie-prof-portfolio.png";
 import workieTechieHomepage from "../assets/projects/workietechie/workietechie-homepage.png";
 import workieTechieAdmin from "../assets/projects/workietechie/workie-techie-admin.png";
 import type {
@@ -152,6 +161,31 @@ export const projects: ProjectCaseStudy[] = [
         alt: "Iwacumo admin overview preview",
         note: "Administrative control is separated cleanly from tenant-facing actions.",
       },
+      {
+        src: iwacumoLibrary,
+        alt: "Iwacumo library preview",
+        note: "The reading and discovery experience keeps book browsing structured and easy to navigate.",
+      },
+      {
+        src: iwacumoPlatformLedger,
+        alt: "Iwacumo platform ledger preview",
+        note: "Platform-wide financial visibility supports internal payment and payout operations.",
+      },
+      {
+        src: iwacumoPublishersPortal,
+        alt: "Iwacumo publishers portal preview",
+        note: "Publisher operations stay organized around books, authors, and storefront ownership.",
+      },
+      {
+        src: iwacumoReaderPortal,
+        alt: "Iwacumo reader portal preview",
+        note: "Reader-facing journeys remain clear across discovery, access, and engagement.",
+      },
+      {
+        src: iwacumoSystemSettings,
+        alt: "Iwacumo system settings preview",
+        note: "System configuration is managed through a controlled administrative layer.",
+      },
     ],
   },
   {
@@ -195,6 +229,16 @@ export const projects: ProjectCaseStudy[] = [
         alt: "Prepadi admin dashboard preview",
         note: "The administrative view keeps exams, users, and school operations organized in one structured workspace.",
       },
+      {
+        src: prepadiExamSession,
+        alt: "Prepadi exam session preview",
+        note: "The CBT experience is built to feel focused, stable, and dependable under timed conditions.",
+      },
+      {
+        src: prepadiOrgExam,
+        alt: "Prepadi organization exam preview",
+        note: "Institution-facing exam flows keep setup and management readable for teams.",
+      },
     ],
   },
   {
@@ -237,6 +281,16 @@ export const projects: ProjectCaseStudy[] = [
         src: workieTechieAdmin,
         alt: "WorkieTechie admin workflow preview",
         note: "Operational control stays visible through a clearer admin view for approvals, assignments, and marketplace oversight.",
+      },
+      {
+        src: workieClientDashboard,
+        alt: "WorkieTechie client dashboard preview",
+        note: "Client-side visibility helps projects feel more structured from discovery through delivery.",
+      },
+      {
+        src: workieProfessionalPortfolio,
+        alt: "WorkieTechie professional portfolio preview",
+        note: "Professional profiles are presented in a way that supports trust, fit, and better matching.",
       },
     ],
   },
