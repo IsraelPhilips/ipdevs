@@ -67,20 +67,33 @@
   }
 }
 
-@keyframes accentShift {
+@keyframes accentReveal {
   0% {
-    background-position: 0% 50%;
-    text-shadow: 0 0 0 rgba(114, 246, 210, 0);
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.72;
   }
 
-  50% {
-    background-position: 100% 50%;
-    text-shadow: 0 0 28px rgba(114, 246, 210, 0.2);
+  28%,
+  70% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
   }
 
   100% {
-    background-position: 0% 50%;
-    text-shadow: 0 0 0 rgba(114, 246, 210, 0);
+    clip-path: inset(0 0 0 100%);
+    opacity: 0.72;
+  }
+}
+
+@keyframes caretPulse {
+  0%,
+  46% {
+    opacity: 1;
+  }
+
+  47%,
+  100% {
+    opacity: 0;
   }
 }
 
@@ -362,16 +375,35 @@ select {
 
 .hero-title {
   display: block;
-  max-width: 12ch;
+  max-width: 13ch;
 }
 
 .hero-title-accent {
-  background: linear-gradient(90deg, var(--text), var(--accent), #b6fbff, var(--text));
-  background-size: 220% 220%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: accentShift 6s ease-in-out infinite;
+  position: relative;
+  display: inline-block;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.hero-title-accent::before {
+  content: "practical AI systems";
+  position: absolute;
+  inset: 0;
+  color: #d9fff6;
+  text-shadow: 0 0 24px rgba(114, 246, 210, 0.26);
+  animation: accentReveal 4.6s steps(24, end) infinite;
+}
+
+.hero-title-accent::after {
+  content: "";
+  display: inline-block;
+  width: 0.075em;
+  height: 0.78em;
+  margin-left: 0.08em;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(114, 246, 210, 0.55);
+  animation: caretPulse 900ms steps(1, end) infinite;
 }
 
 .hero-description,

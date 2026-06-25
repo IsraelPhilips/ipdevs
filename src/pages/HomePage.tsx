@@ -46,10 +46,10 @@ export function HomePage() {
         <motion.div
           className="hero-copy"
           initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: [0, -12, 0] }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
-            opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-            y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+            duration: 0.7,
+            ease: [0.22, 1, 0.36, 1],
           }}
         >
           <div className="hero-glow hero-glow-left" />
@@ -60,13 +60,13 @@ export function HomePage() {
             initial={{ opacity: 0, y: 54, rotate: 1.5 }}
             animate={{
               opacity: 1,
-              y: [0, -8, 0, 6, 0],
+              y: 0,
               rotate: 0,
             }}
             transition={{
               opacity: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
               rotate: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
-              y: { duration: 11, repeat: Infinity, ease: "easeInOut" },
+              y: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
             }}
           >
             I build polished software and{" "}
