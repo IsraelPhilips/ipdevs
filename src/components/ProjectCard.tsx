@@ -14,9 +14,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.article
       className="project-card"
-      initial={false}
+      initial={{ opacity: 0, y: 72, rotateX: 18, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.16 }}
       whileHover={{ y: -12, rotateX: 5, rotateY: -5 }}
-      transition={{ type: "spring", stiffness: 260, damping: 22 }}
+      transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="project-preview">
         <img src={project.gallery[0].src} alt={project.gallery[0].alt} />

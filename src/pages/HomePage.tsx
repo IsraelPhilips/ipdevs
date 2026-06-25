@@ -18,11 +18,6 @@ import { getMailtoLink, links } from "../utils/env";
 export function HomePage() {
   const location = useLocation();
   const mailtoLink = getMailtoLink();
-  const heroLines = [
-    "I build polished software",
-    "and practical AI systems",
-    "people actually use.",
-  ];
 
   useEffect(() => {
     if (location.hash !== "#projects") {
@@ -62,35 +57,20 @@ export function HomePage() {
           <span className="hero-kicker">Software Engineer • AI Developer • Product Builder</span>
           <motion.h1
             className="hero-title"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.14,
-                  delayChildren: 0.08,
-                },
-              },
+            initial={{ opacity: 0, y: 54, rotate: 1.5 }}
+            animate={{
+              opacity: 1,
+              y: [0, -8, 0, 6, 0],
+              rotate: 0,
+            }}
+            transition={{
+              opacity: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
+              rotate: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
+              y: { duration: 11, repeat: Infinity, ease: "easeInOut" },
             }}
           >
-            {heroLines.map((line) => (
-              <motion.span
-                key={line}
-                className="hero-title-line"
-                variants={{
-                  hidden: { opacity: 0, y: 54, rotate: 2 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    rotate: 0,
-                    transition: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
-                  },
-                }}
-              >
-                {line}
-              </motion.span>
-            ))}
+            I build polished software and{" "}
+            <span className="hero-title-accent">practical AI systems</span> people actually use.
           </motion.h1>
           <motion.p
             className="hero-description"
@@ -100,8 +80,8 @@ export function HomePage() {
           >
             I am Israel Philips, a software engineer and AI developer with 6+ years of
             experience building for startups, operators, and global-facing teams. My work
-            focuses on shipping clean interfaces, dependable product logic, and AI features
-            that solve real business problems.
+            focuses on shipping clean interfaces, dependable product logic, and practical AI
+            features and AI systems that solve real business problems.
           </motion.p>
           <motion.div
             className="hero-actions"
@@ -162,8 +142,15 @@ export function HomePage() {
         copy="A focused toolset for product UI, platform systems, mobile builds, cloud-backed apps, and practical AI implementation."
       >
         <div className="stack-grid">
-          {techStackGroups.map((group) => (
-            <article key={group.title} className="stack-card">
+          {techStackGroups.map((group, index) => (
+            <motion.article
+              key={group.title}
+              className="stack-card"
+              initial={{ opacity: 0, y: 70, rotateX: 14, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.18 }}
+              transition={{ duration: 0.8, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            >
               <span className="stack-card-kicker">{group.title}</span>
               <h3>{group.title}</h3>
               <div className="stack-chip-grid">
@@ -173,7 +160,7 @@ export function HomePage() {
                   </span>
                 ))}
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </Section>
@@ -198,16 +185,17 @@ export function HomePage() {
         copy="Codex, Claude Code, and AntiGravity are used selectively where they genuinely improve speed, review quality, or controlled experimentation."
       >
         <div className="workflow-panel">
+          <p className="workflow-caption">Selected tools in an intentionally human-led engineering process.</p>
           <div className="workflow-chip-cloud">
             {workflowTools.map((tool, index) => (
               <motion.div
                 key={tool.name}
                 className="workflow-chip-card"
-                initial={{ opacity: 0, scale: 0.92, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                whileHover={{ y: -6, rotate: index % 2 === 0 ? -2 : 2 }}
+                initial={{ opacity: 0, scale: 0.84, y: 46, rotate: index % 2 === 0 ? -8 : 8 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0, rotate: 0 }}
+                whileHover={{ y: -8, rotate: index % 2 === 0 ? -3 : 3, scale: 1.04 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
+                transition={{ duration: 0.58, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
               >
                 <span className="workflow-label">{tool.name}</span>
               </motion.div>

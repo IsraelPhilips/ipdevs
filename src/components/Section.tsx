@@ -21,10 +21,10 @@ export function Section({
     <motion.section
       id={id}
       className="section-shell"
-      initial={{ opacity: 0, y: 56, scale: 0.98 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 68, scale: 0.97, rotateX: 8 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
       viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.75, ease: [0.18, 0.9, 0.24, 1] }}
+      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="section-copy">
         <span className="section-eyebrow">{eyebrow}</span>
