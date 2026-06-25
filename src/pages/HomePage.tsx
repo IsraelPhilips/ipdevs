@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import { ProjectCard } from "../components/ProjectCard";
 import { Section } from "../components/Section";
 import {
@@ -10,10 +12,33 @@ import {
   techStackGroups,
   workflowTools,
 } from "../content/siteContent";
+import { consumePortfolioScrollPosition } from "../utils/scrollState";
 import { getMailtoLink, links } from "../utils/env";
 
 export function HomePage() {
+  const location = useLocation();
   const mailtoLink = getMailtoLink();
+  const heroLines = [
+    "I build polished software",
+    "and practical AI systems",
+    "people actually use.",
+  ];
+
+  useEffect(() => {
+    if (location.hash !== "#projects") {
+      return;
+    }
+
+    const savedScroll = consumePortfolioScrollPosition();
+
+    if (savedScroll === null) {
+      return;
+    }
+
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: savedScroll, behavior: "auto" });
+    });
+  }, [location.hash]);
 
   return (
     <>
@@ -26,18 +51,64 @@ export function HomePage() {
         <motion.div
           className="hero-copy"
           initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          animate={{ opacity: 1, y: [0, -12, 0] }}
+          transition={{
+            opacity: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+            y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+          }}
         >
+          <div className="hero-glow hero-glow-left" />
+          <div className="hero-glow hero-glow-right" />
           <span className="hero-kicker">Software Engineer • AI Developer • Product Builder</span>
-          <h1>I build polished software and practical AI systems people actually use.</h1>
-          <p className="hero-description">
+          <motion.h1
+            className="hero-title"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.14,
+                  delayChildren: 0.08,
+                },
+              },
+            }}
+          >
+            {heroLines.map((line) => (
+              <motion.span
+                key={line}
+                className="hero-title-line"
+                variants={{
+                  hidden: { opacity: 0, y: 54, rotate: 2 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    rotate: 0,
+                    transition: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
+                  },
+                }}
+              >
+                {line}
+              </motion.span>
+            ))}
+          </motion.h1>
+          <motion.p
+            className="hero-description"
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35, ease: [0.2, 0.9, 0.24, 1] }}
+          >
             I am Israel Philips, a software engineer and AI developer with 6+ years of
             experience building for startups, operators, and global-facing teams. My work
             focuses on shipping clean interfaces, dependable product logic, and AI features
             that solve real business problems.
-          </p>
-          <div className="hero-actions">
+          </motion.p>
+          <motion.div
+            className="hero-actions"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.48, ease: [0.2, 0.9, 0.24, 1] }}
+          >
             <a className="button" href="#projects">
               Explore selected work
             </a>
@@ -52,14 +123,18 @@ export function HomePage() {
             <a className="button button-ghost" href={mailtoLink}>
               Send an email
             </a>
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.aside
           className="hero-panel"
           initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.12 }}
+          animate={{ opacity: 1, scale: 1, y: [0, 10, 0] }}
+          transition={{
+            opacity: { duration: 0.7, delay: 0.12 },
+            scale: { duration: 0.7, delay: 0.12 },
+            y: { duration: 9, repeat: Infinity, ease: "easeInOut" },
+          }}
         >
           <div className="panel-chip">What teams get</div>
           <ul className="metric-list">
@@ -120,28 +195,23 @@ export function HomePage() {
         id="workflow"
         eyebrow="Engineering workflow"
         title="AI-assisted workflow when needed"
-        copy="Used selectively to support implementation, review, and controlled experimentation without replacing engineering judgment."
+        copy="Codex, Claude Code, and AntiGravity are used selectively where they genuinely improve speed, review quality, or controlled experimentation."
       >
         <div className="workflow-panel">
-          <p className="workflow-summary">
-            I use AI tools as support systems, not substitutes for product thinking or code
-            quality. The value is in sharper implementation passes, clearer review loops, and
-            focused experimentation when it genuinely helps the work.
-          </p>
           <div className="workflow-chip-cloud">
-          {workflowTools.map((tool) => (
-            <motion.div
-              key={tool.name}
-              className="workflow-chip-card"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5 }}
-            >
-              <span className="workflow-label">{tool.name}</span>
-              <span className="workflow-chip-copy">{tool.use}</span>
-            </motion.div>
-          ))}
+            {workflowTools.map((tool, index) => (
+              <motion.div
+                key={tool.name}
+                className="workflow-chip-card"
+                initial={{ opacity: 0, scale: 0.92, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                whileHover={{ y: -6, rotate: index % 2 === 0 ? -2 : 2 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+              >
+                <span className="workflow-label">{tool.name}</span>
+              </motion.div>
+            ))}
           </div>
         </div>
       </Section>

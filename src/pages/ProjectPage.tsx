@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
 import { projects, siteTitle } from "../content/siteContent";
+import { markPortfolioScrollForRestore } from "../utils/scrollState";
 import { getProjectUrl } from "../utils/env";
 
 export function ProjectPage() {
@@ -9,6 +10,10 @@ export function ProjectPage() {
   const project = projects.find((item) => item.slug === slug);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
   const galleryLength = project?.gallery.length ?? 0;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [slug]);
 
   useEffect(() => {
     if (activeGalleryIndex === null || !project) {
@@ -78,7 +83,7 @@ export function ProjectPage() {
 
       <section className="detail-shell">
         <div className="detail-topbar">
-          <Link className="text-link" to="/">
+          <Link className="text-link" to="/#projects" onClick={markPortfolioScrollForRestore}>
             Back to portfolio
           </Link>
           {liveUrl ? (

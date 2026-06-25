@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import type { ProjectCaseStudy } from "../content/types";
+import { savePortfolioScrollPosition } from "../utils/scrollState";
 import { getProjectUrl } from "../utils/env";
 
 type ProjectCardProps = {
@@ -10,7 +12,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const liveUrl = getProjectUrl(project.liveUrlEnvKey);
 
   return (
-    <article className="project-card">
+    <motion.article
+      className="project-card"
+      initial={false}
+      whileHover={{ y: -12, rotateX: 5, rotateY: -5 }}
+      transition={{ type: "spring", stiffness: 260, damping: 22 }}
+    >
       <div className="project-preview">
         <img src={project.gallery[0].src} alt={project.gallery[0].alt} />
       </div>
@@ -30,7 +37,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="project-footer">
           <span>{project.outcome}</span>
           <div className="project-links">
-            <Link className="text-link" to={`/projects/${project.slug}`}>
+            <Link
+              className="text-link"
+              to={`/projects/${project.slug}`}
+              onClick={savePortfolioScrollPosition}
+            >
               View case study
             </Link>
             {liveUrl ? (
@@ -41,6 +52,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

@@ -1,6 +1,3 @@
-import ghealeadAdminAnalytics from "../assets/projects/ghealead/ghealead-admin-analytics.png";
-import ghealeadClientDashboard from "../assets/projects/ghealead/ghealead-client-dashboard.png";
-import ghealeadTherapistDashboard from "../assets/projects/ghealead/ghealead-therapist-dashboard.png";
 import iwacumoAdminOverview from "../assets/projects/iwacumo/iwacumo-admin-overview.png";
 import iwacumoLibrary from "../assets/projects/iwacumo/iwacumo-library.png";
 import iwacumoPlatformLedger from "../assets/projects/iwacumo/iwacumo-platform-ledger.png";
@@ -9,15 +6,15 @@ import iwacumoPublishersPortal from "../assets/projects/iwacumo/iwacumo-publishe
 import iwacumoReaderPortal from "../assets/projects/iwacumo/iwacumo-reader-portal.png";
 import iwacumoStorefront from "../assets/projects/iwacumo/iwacumo-storefront.png";
 import iwacumoSystemSettings from "../assets/projects/iwacumo/iwacumo-system-settings.png";
-import prymagentChatDashboard from "../assets/projects/prymagent/prymagent-chat-dashboard.png";
-import prymagentFeatureList from "../assets/projects/prymagent/prymagent-feature-list.png";
+import prymagentBillingDashboard from "../assets/projects/prymagent/prymagent-billing-dashboard-june-2026.png";
+import prymagentHomepage from "../assets/projects/prymagent/prymagent-homepage-june-2026.png";
 import prepadiAdmin from "../assets/projects/prepadi/prepadi-admin.png";
 import prepadiExamSession from "../assets/projects/prepadi/prepadi-exam-session.png";
 import prepadiHomepage from "../assets/projects/prepadi/prepadi-homepage.png";
 import prepadiOrgExam from "../assets/projects/prepadi/prepadi-org-exam.png";
 import workieClientDashboard from "../assets/projects/workietechie/workie-client-dashboard.png";
 import workieProfessionalPortfolio from "../assets/projects/workietechie/workie-prof-portfolio.png";
-import workieTechieHomepage from "../assets/projects/workietechie/workietechie-homepage.png";
+import workieTechieHomepage from "../assets/projects/workietechie/workietechie-homepage-june-2026.png";
 import workieTechieAdmin from "../assets/projects/workietechie/workie-techie-admin.png";
 import type {
   ProjectCaseStudy,
@@ -75,43 +72,43 @@ export const projects: ProjectCaseStudy[] = [
   {
     slug: "prymagent",
     name: "PrymAgent",
-    eyebrow: "AI finance workflow",
+    eyebrow: "AI billing workflow",
     summary:
-      "A WhatsApp-native AI bookkeeper and financial assistant for business owners and professionals.",
+      "An AI-assisted billing workflow for service providers and teams, built around WhatsApp and a lightweight web layer.",
     intro:
-      "PrymAgent turns everyday chat into useful business operations. Users can create invoices, log transactions, generate payment links, and request reports directly from WhatsApp without opening a new dashboard.",
+      "PrymAgent helps service providers and business teams create quotes, invoices, receipts, track payments, and keep billing records organized from WhatsApp, with a simple web view for broader visibility and workflow control.",
     role:
-      "I led the product engineering direction around conversational finance UX, delivery flow, and the full-stack product experience needed to make AI useful in a familiar channel.",
+      "I worked across the product experience that turns natural billing requests into structured business documents, payment records, and cleaner operational workflows.",
     outcome:
-      "A lightweight but powerful finance assistant built around user behavior people already have: chatting on WhatsApp.",
+      "A faster, cleaner billing experience that reduces admin drag for independent professionals while staying extensible for team workflows.",
     challenge:
-      "The product had to feel simple enough for non-technical business owners while still supporting structured financial actions with confidence and speed.",
+      "Billing workflows are repetitive, detail-sensitive, and easy to break inside chat. The product had to stay simple on WhatsApp while still producing professional outputs and reliable records.",
     approach:
-      "I focused on clean operational flows, reliable action states, and a product language that keeps finance tasks calm, conversational, and easy to complete.",
-    stack: ["React", "TypeScript", "Django", "AI Workflows", "Payments"],
-    tags: ["Conversational AI", "Fintech UX", "Operations Automation"],
+      "I focused on a dual-channel product flow: quick task execution through chat for day-to-day actions, plus a clear web layer for billing visibility, client records, and broader workflow management.",
+    stack: ["React", "TypeScript", "Django", "WhatsApp Workflows", "Payments"],
+    tags: ["Billing Workflows", "WhatsApp AI", "Service Operations"],
     highlights: [
-      "Invoice generation through chat with payment links",
-      "Transaction logging that reduces spreadsheet dependence",
-      "Monthly reporting flow designed for fast decision-making",
-      "AI-first experience built around a channel users already trust",
+      "Generate quotes, invoices, and receipts from natural requests",
+      "Track invoices as paid, unpaid, part-paid, or overdue",
+      "Keep cleaner client records, payment history, and earnings summaries",
+      "Support both solo service-provider workflows and team billing flows",
     ],
     metrics: [
-      "Built for faster day-to-day money tracking",
-      "Removed the need for separate finance tooling in simple workflows",
-      "Designed to reduce friction for small business operators",
+      "Cuts manual billing admin for service providers and operators",
+      "Keeps quotes, invoices, receipts, and payment records more structured",
+      "Extends from everyday WhatsApp usage into broader team-ready billing workflows",
     ],
     liveUrlEnvKey: "VITE_PROJECT_PRYMAGENT_URL",
     gallery: [
       {
-        src: prymagentChatDashboard,
-        alt: "PrymAgent chat-based dashboard preview",
-        note: "The live assistant experience is centered on direct task execution inside chat.",
+        src: prymagentHomepage,
+        alt: "PrymAgent homepage preview",
+        note: "The product introduces AI-assisted billing around WhatsApp-first execution and cleaner service-provider workflows.",
       },
       {
-        src: prymagentFeatureList,
-        alt: "PrymAgent feature list and product flow preview",
-        note: "The supporting product view reinforces how invoicing, logging, and reporting stay simple inside one AI-native workflow.",
+        src: prymagentBillingDashboard,
+        alt: "PrymAgent billing dashboard preview",
+        note: "The dashboard view gives teams and service providers a clearer way to monitor invoices, clients, credits, and billing records.",
       },
     ],
   },
@@ -275,7 +272,7 @@ export const projects: ProjectCaseStudy[] = [
       {
         src: workieTechieHomepage,
         alt: "WorkieTechie homepage preview",
-        note: "The marketplace experience introduces trust and clarity from the very first screen.",
+        note: "The client-facing homepage frames the product around vetted matching, trust, and clear request workflows.",
       },
       {
         src: workieTechieAdmin,
@@ -291,54 +288,6 @@ export const projects: ProjectCaseStudy[] = [
         src: workieProfessionalPortfolio,
         alt: "WorkieTechie professional portfolio preview",
         note: "Professional profiles are presented in a way that supports trust, fit, and better matching.",
-      },
-    ],
-  },
-  {
-    slug: "ghealead",
-    name: "Ghealead",
-    eyebrow: "Therapy booking platform",
-    summary:
-      "A faith-based therapy booking platform that supports clients, therapists, and admins with structured care workflows.",
-    intro:
-      "Ghealead combines booking, therapist assignment, documented care sessions, and internal payments inside one product designed to feel responsible and easy to navigate.",
-    role:
-      "I co-developed the platform experience across the client, therapist, and administrative sides of the product.",
-    outcome:
-      "A clearer path from intake to assignment, session tracking, and follow-through for users who need trust and care-centered structure.",
-    challenge:
-      "Sensitive care journeys demand clarity and emotional safety. The system needed to support multiple roles without making any part of the experience feel heavy or confusing.",
-    approach:
-      "I focused on role-specific dashboards, consistent interaction patterns, and calm visual structure so users could move through each step with confidence.",
-    stack: ["React", "TypeScript", "Full-stack Platform Logic", "Payments"],
-    tags: ["Healthtech", "Care Workflows", "Role-based Dashboards"],
-    highlights: [
-      "Therapy booking and pre-assessment intake flow",
-      "Therapist assignment and documented session support",
-      "Separate dashboard experiences for admins, therapists, and clients",
-      "Integrated payment handling inside the product journey",
-    ],
-    metrics: [
-      "Supports multi-role care delivery inside one platform",
-      "Keeps sensitive workflows structured and readable",
-      "Built to reinforce trust across every user journey",
-    ],
-    liveUrlEnvKey: "VITE_PROJECT_GHEALEAD_URL",
-    gallery: [
-      {
-        src: ghealeadClientDashboard,
-        alt: "Ghealead client dashboard preview",
-        note: "Clients get a guided experience that feels steady and easy to understand.",
-      },
-      {
-        src: ghealeadTherapistDashboard,
-        alt: "Ghealead therapist dashboard preview",
-        note: "Therapist tools keep sessions, notes, and assigned care workflows organized.",
-      },
-      {
-        src: ghealeadAdminAnalytics,
-        alt: "Ghealead admin analytics preview",
-        note: "Admins can monitor the platform with visibility across operations and user activity.",
       },
     ],
   },

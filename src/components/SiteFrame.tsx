@@ -40,10 +40,10 @@ export function SiteFrame() {
       <AnimatePresence mode="wait">
         <motion.main
           key={location.pathname}
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 48, scale: 0.985, rotateX: 5 }}
+          animate={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+          exit={{ opacity: 0, y: -28, scale: 0.992, rotateX: -3 }}
+          transition={{ duration: 0.55, ease: [0.2, 0.9, 0.24, 1] }}
         >
           <Outlet />
         </motion.main>

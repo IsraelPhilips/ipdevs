@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import type { PropsWithChildren, ReactNode } from "react";
 
 type SectionProps = PropsWithChildren<{
@@ -17,7 +18,14 @@ export function Section({
   children,
 }: SectionProps) {
   return (
-    <section id={id} className="section-shell">
+    <motion.section
+      id={id}
+      className="section-shell"
+      initial={{ opacity: 0, y: 56, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.75, ease: [0.18, 0.9, 0.24, 1] }}
+    >
       <div className="section-copy">
         <span className="section-eyebrow">{eyebrow}</span>
         <div className="section-heading-row">
@@ -29,6 +37,6 @@ export function Section({
         </div>
       </div>
       {children}
-    </section>
+    </motion.section>
   );
 }
