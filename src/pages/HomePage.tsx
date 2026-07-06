@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { ProjectCard } from "../components/ProjectCard";
 import { Section } from "../components/Section";
+import { TypewriterText } from "../components/TypewriterText";
 import {
   heroMetrics,
   projects,
@@ -54,7 +55,7 @@ export function HomePage() {
         >
           <div className="hero-glow hero-glow-left" />
           <div className="hero-glow hero-glow-right" />
-          <span className="hero-kicker">Software Engineer • AI Developer • Product Builder</span>
+          <span className="hero-kicker">Software Engineer • AI Systems Engineer • Product Builder</span>
           <motion.h1
             className="hero-title"
             initial={{ opacity: 0, y: 54, rotate: 1.5 }}
@@ -69,8 +70,11 @@ export function HomePage() {
               y: { duration: 0.72, ease: [0.16, 1, 0.3, 1] },
             }}
           >
-            I build polished software and{" "}
-            <span className="hero-title-accent">practical AI systems</span> people actually use.
+            <span className="hero-title-line">
+              I build polished software and{" "}
+            </span>{" "}
+            <TypewriterText text="practical AI systems" startDelay={700} />{" "}
+            <span className="hero-title-line">people actually use.</span>
           </motion.h1>
           <motion.p
             className="hero-description"
@@ -78,7 +82,7 @@ export function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease: [0.2, 0.9, 0.24, 1] }}
           >
-            I am Israel Philips, a software engineer and AI developer with 6+ years of
+            I am Israel Philips, a software engineer and AI systems engineer with 6+ years of
             experience building for startups, operators, and global-facing teams. My work
             focuses on shipping clean interfaces, dependable product logic, and practical AI
             features and AI systems that solve real business problems.

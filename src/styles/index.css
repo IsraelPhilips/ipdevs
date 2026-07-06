@@ -67,32 +67,13 @@
   }
 }
 
-@keyframes accentReveal {
-  0% {
-    clip-path: inset(0 100% 0 0);
-    opacity: 0.72;
-  }
-
-  28%,
-  70% {
-    clip-path: inset(0 0 0 0);
-    opacity: 1;
-  }
-
-  100% {
-    clip-path: inset(0 0 0 100%);
-    opacity: 0.72;
-  }
-}
-
-@keyframes caretPulse {
+@keyframes blink {
   0%,
-  46% {
+  100% {
     opacity: 1;
   }
 
-  47%,
-  100% {
+  50% {
     opacity: 0;
   }
 }
@@ -378,32 +359,25 @@ select {
   max-width: 13ch;
 }
 
+.hero-title-line {
+  display: inline;
+}
+
 .hero-title-accent {
-  position: relative;
-  display: inline-block;
   color: var(--accent);
-  white-space: nowrap;
-}
-
-.hero-title-accent::before {
-  content: "practical AI systems";
-  position: absolute;
-  inset: 0;
-  color: #d9fff6;
   text-shadow: 0 0 24px rgba(114, 246, 210, 0.26);
-  animation: accentReveal 4.6s steps(24, end) infinite;
 }
 
-.hero-title-accent::after {
-  content: "";
+.typewriter-cursor {
   display: inline-block;
   width: 0.075em;
   height: 0.78em;
-  margin-left: 0.08em;
+  margin-left: 0.06em;
   border-radius: 999px;
   background: var(--accent);
   box-shadow: 0 0 18px rgba(114, 246, 210, 0.55);
-  animation: caretPulse 900ms steps(1, end) infinite;
+  animation: blink 1s step-end infinite;
+  vertical-align: baseline;
 }
 
 .hero-description,
