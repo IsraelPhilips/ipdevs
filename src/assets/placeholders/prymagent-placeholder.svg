@@ -1,0 +1,19 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="40" fill="#081523"/>
+  <rect x="48" y="48" width="1104" height="624" rx="32" fill="#0D2136" stroke="#23476B"/>
+  <circle cx="138" cy="112" r="11" fill="#72F6D2"/>
+  <circle cx="174" cy="112" r="11" fill="#66A7FF"/>
+  <circle cx="210" cy="112" r="11" fill="#FFCA80"/>
+  <rect x="96" y="170" width="364" height="108" rx="28" fill="#123654"/>
+  <rect x="96" y="320" width="506" height="84" rx="26" fill="#133B5C"/>
+  <rect x="96" y="436" width="422" height="84" rx="26" fill="#133B5C"/>
+  <rect x="708" y="182" width="354" height="148" rx="28" fill="#102B44" stroke="#1B4F77"/>
+  <rect x="708" y="356" width="354" height="176" rx="28" fill="#102B44" stroke="#1B4F77"/>
+  <rect x="744" y="390" width="282" height="28" rx="14" fill="#72F6D2" fill-opacity="0.4"/>
+  <rect x="744" y="438" width="240" height="22" rx="11" fill="#A2B2CF" fill-opacity="0.22"/>
+  <rect x="744" y="474" width="204" height="22" rx="11" fill="#A2B2CF" fill-opacity="0.18"/>
+  <path d="M822 224C822 213.507 830.507 205 841 205H929C939.493 205 948 213.507 948 224V224C948 234.493 939.493 243 929 243H841C830.507 243 822 234.493 822 224V224Z" fill="#72F6D2"/>
+  <rect x="96" y="572" width="276" height="34" rx="17" fill="#72F6D2" fill-opacity="0.32"/>
+  <text x="96" y="635" fill="#F3F7FF" font-family="Arial, sans-serif" font-size="42" font-weight="700">Additional PrymAgent visual placeholder</text>
+</svg>
+

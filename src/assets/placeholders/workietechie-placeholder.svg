@@ -1,0 +1,19 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="40" fill="#07111F"/>
+  <rect x="56" y="56" width="1088" height="608" rx="32" fill="#0C1E33" stroke="#23476B"/>
+  <rect x="96" y="112" width="1008" height="92" rx="26" fill="#102741"/>
+  <rect x="112" y="136" width="284" height="44" rx="22" fill="#66A7FF" fill-opacity="0.34"/>
+  <rect x="96" y="244" width="314" height="372" rx="28" fill="#102741" stroke="#1F476D"/>
+  <rect x="444" y="244" width="660" height="170" rx="28" fill="#102741" stroke="#1F476D"/>
+  <rect x="444" y="446" width="316" height="170" rx="28" fill="#102741" stroke="#1F476D"/>
+  <rect x="788" y="446" width="316" height="170" rx="28" fill="#102741" stroke="#1F476D"/>
+  <rect x="130" y="284" width="244" height="26" rx="13" fill="#72F6D2" fill-opacity="0.42"/>
+  <rect x="130" y="336" width="210" height="18" rx="9" fill="#A2B2CF" fill-opacity="0.24"/>
+  <rect x="130" y="370" width="228" height="18" rx="9" fill="#A2B2CF" fill-opacity="0.2"/>
+  <rect x="480" y="282" width="200" height="24" rx="12" fill="#72F6D2" fill-opacity="0.42"/>
+  <rect x="480" y="330" width="570" height="22" rx="11" fill="#A2B2CF" fill-opacity="0.22"/>
+  <rect x="480" y="366" width="536" height="22" rx="11" fill="#A2B2CF" fill-opacity="0.16"/>
+  <circle cx="566" cy="532" r="42" fill="#72F6D2" fill-opacity="0.26"/>
+  <circle cx="910" cy="532" r="42" fill="#66A7FF" fill-opacity="0.28"/>
+  <text x="96" y="642" fill="#F3F7FF" font-family="Arial, sans-serif" font-size="42" font-weight="700">Additional WorkieTechie workflow placeholder</text>
+</svg>
