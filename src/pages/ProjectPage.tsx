@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Helmet } from "react-helmet-async";
 import { Link, useParams } from "react-router-dom";
 import { projects, siteTitle } from "../content/siteContent";
@@ -193,67 +194,75 @@ export function ProjectPage() {
           </div>
         </section>
 
-        {activeGalleryItem ? (
-          <div
-            className="gallery-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-label={`${project.name} image gallery`}
-          >
-            <button
-              type="button"
-              className="gallery-modal-backdrop"
-              aria-label="Close image gallery"
-              onClick={() => setActiveGalleryIndex(null)}
-            />
-            <div className="gallery-modal-panel">
-              <div className="gallery-modal-topbar">
-                <p className="gallery-modal-count">
-                  {activeGalleryIndex + 1} / {project.gallery.length}
-                </p>
+        {activeGalleryItem
+          ? createPortal(
+              <div
+                className="gallery-modal"
+                role="dialog"
+                aria-modal="true"
+                aria-label={`${project.name} image gallery`}
+              >
                 <button
                   type="button"
-                  className="gallery-modal-close"
-                  onClick={() => setActiveGalleryIndex(null)}
+                  className="gallery-modal-backdrop"
                   aria-label="Close image gallery"
-                >
-                  <span aria-hidden="true">+</span>
-                </button>
-              </div>
-              <div className="gallery-modal-stage">
-                {project.gallery.length > 1 ? (
-                  <button
-                    type="button"
-                    className="gallery-nav-button"
-                    onClick={() =>
-                      setActiveGalleryIndex(
-                        (activeGalleryIndex - 1 + project.gallery.length) % project.gallery.length,
-                      )
-                    }
-                    aria-label="View previous image"
-                  >
-                    <span aria-hidden="true">&lsaquo;</span>
-                  </button>
-                ) : null}
-                <img
-                  className="gallery-modal-image"
-                  src={activeGalleryItem.src}
-                  alt={activeGalleryItem.alt}
+                  onClick={() => setActiveGalleryIndex(null)}
                 />
-                {project.gallery.length > 1 ? (
-                  <button
-                    type="button"
-                    className="gallery-nav-button"
-                    onClick={() => setActiveGalleryIndex((activeGalleryIndex + 1) % project.gallery.length)}
-                    aria-label="View next image"
-                  >
-                    <span aria-hidden="true">&rsaquo;</span>
-                  </button>
-                ) : null}
-              </div>
-            </div>
-          </div>
-        ) : null}
+                <div className="gallery-modal-panel">
+                  <div className="gallery-modal-topbar">
+                    <p className="gallery-modal-count">
+                      {activeGalleryIndex + 1} / {project.gallery.length}
+                    </p>
+                    <button
+                      type="button"
+                      className="gallery-modal-close"
+                      onClick={() => setActiveGalleryIndex(null)}
+                      aria-label="Close image gallery"
+                    >
+                      <span aria-hidden="true">+</span>
+                    </button>
+                  </div>
+                  <div className="gallery-modal-stage">
+                    {project.gallery.length > 1 ? (
+                      <button
+                        type="button"
+                        className="gallery-nav-button"
+                        onClick={() =>
+                          setActiveGalleryIndex(
+                            (activeGalleryIndex - 1 + project.gallery.length) %
+                              project.gallery.length,
+                          )
+                        }
+                        aria-label="View previous image"
+                      >
+                        <span aria-hidden="true">&lsaquo;</span>
+                      </button>
+                    ) : null}
+                    <img
+                      className="gallery-modal-image"
+                      src={activeGalleryItem.src}
+                      alt={activeGalleryItem.alt}
+                    />
+                    {project.gallery.length > 1 ? (
+                      <button
+                        type="button"
+                        className="gallery-nav-button"
+                        onClick={() =>
+                          setActiveGalleryIndex(
+                            (activeGalleryIndex + 1) % project.gallery.length,
+                          )
+                        }
+                        aria-label="View next image"
+                      >
+                        <span aria-hidden="true">&rsaquo;</span>
+                      </button>
+                    ) : null}
+                  </div>
+                </div>
+              </div>,
+              document.body,
+            )
+          : null}
       </section>
     </>
   );
