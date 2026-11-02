@@ -8,6 +8,11 @@ import iwacumoStorefront from "../assets/projects/iwacumo/iwacumo-storefront.png
 import iwacumoSystemSettings from "../assets/projects/iwacumo/iwacumo-system-settings.png";
 import prymagentBillingDashboard from "../assets/projects/prymagent/prymagent-billing-dashboard-june-2026.png";
 import prymagentHomepage from "../assets/projects/prymagent/prymagent-homepage-june-2026.png";
+import recruitOs00 from "../assets/projects/recruitos/recruit00.png";
+import recruitOs01 from "../assets/projects/recruitos/recruit01.png";
+import recruitOs02 from "../assets/projects/recruitos/recruit02.png";
+import recruitOs03 from "../assets/projects/recruitos/recruit03.png";
+import recruitOs04 from "../assets/projects/recruitos/recruit04.png";
 import prepadiAdmin from "../assets/projects/prepadi/prepadi-admin.png";
 import prepadiExamSession from "../assets/projects/prepadi/prepadi-exam-session.png";
 import prepadiHomepage from "../assets/projects/prepadi/prepadi-homepage.png";
@@ -110,6 +115,45 @@ export const projects: ProjectCaseStudy[] = [
         alt: "PrymAgent billing dashboard preview",
         note: "The dashboard view gives teams and service providers a clearer way to monitor invoices, clients, credits, and billing records.",
       },
+    ],
+  },
+  {
+    slug: "recruit-os",
+    name: "Recruit-OS",
+    eyebrow: "AI-assisted recruitment review",
+    summary:
+      "Turns application forms and CVs into evidence-linked review packets, helping recruiters find relevant experience and prepare follow-up while keeping decisions in human hands.",
+    intro:
+      "Recruit-OS brings applications and uploaded CVs into one recruiter workflow. It organizes job-related evidence, shows where information comes from, and helps teams review candidates and prepare follow-up without handing hiring decisions to AI.",
+    role:
+      "I owned the product direction, problem framing, architecture, technology choices, and evaluation criteria. I also set how the system should handle evidence and recruiter oversight, and reviewed AI-assisted implementation work before deciding what to adopt.",
+    outcome:
+      "A working application connects to Google Forms, retrieves uploaded CVs, and prepares structured candidate reviews. One synthetic full-workflow evaluation passed all 12 cases, with 39 of 39 saved citations grounded in extracted CV text. This reflects that tested workflow, not proven production accuracy.",
+    challenge:
+      "Recruiters handling many applications move between form responses, CVs, job requirements, and follow-up. Finding relevant evidence and tracking what still needs review can be difficult. Uncertain or missing information also needs to stay visible, and an AI score must not make the hiring decision.",
+    approach:
+      "I built an intake and review flow around evidence linked to its source. CV findings are checked against extracted text, and a consistent job-fit summary compares documented evidence with role criteria. Recruiters can inspect and correct findings, then review and approve an email before it is sent. Form-response reconciliation is available; reliable event delivery and watch renewal have not yet been verified end to end.",
+    stack: ["Next.js", "TypeScript", "Supabase", "Google Forms and Drive", "Google OAuth and Gmail"],
+    tags: ["Recruitment Operations", "Applied AI", "Human-in-the-Loop"],
+    highlights: [
+      "Finds Google Forms, maps application fields, and retrieves uploaded CVs",
+      "Shows criterion-level evidence, source excerpts, and gaps for recruiter review",
+      "Summarizes required and preferred criteria to support consistent initial review",
+      "Prepares editable applicant emails that require recruiter approval before sending",
+    ],
+    metrics: [
+      "Brings form responses and CVs into a structured recruiter review workflow",
+      "Makes candidate findings easier to inspect and correct against their sources",
+      "Passed 12 of 12 cases in one synthetic full-workflow evaluation, with 39 of 39 saved citations grounded in extracted CV text",
+    ],
+    liveUrlEnvKey: "VITE_PROJECT_RECRUITOS_URL",
+    sourceUrl: "https://github.com/IsraelPhilips/recruit-os",
+    gallery: [
+      { src: recruitOs00, alt: "Recruit-OS application overview", note: "Recruit-OS brings candidate intake and review into a focused recruiter workspace." },
+      { src: recruitOs01, alt: "Recruit-OS candidate review", note: "Candidate information is organized to support a clear, consistent review." },
+      { src: recruitOs02, alt: "Recruit-OS evidence review", note: "Recruiters can inspect evidence and its source while reviewing a candidate." },
+      { src: recruitOs03, alt: "Recruit-OS application workflow", note: "The workflow helps recruiters move from incoming applications to structured review." },
+      { src: recruitOs04, alt: "Recruit-OS recruiter follow-up", note: "Applicant follow-up remains editable and under recruiter approval." },
     ],
   },
   {

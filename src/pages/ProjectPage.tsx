@@ -92,6 +92,11 @@ export function ProjectPage() {
               Visit live project
             </a>
           ) : null}
+          {project.sourceUrl ? (
+            <a className="text-link" href={project.sourceUrl} target="_blank" rel="noreferrer">
+              View source
+            </a>
+          ) : null}
         </div>
 
         <div className="detail-hero">

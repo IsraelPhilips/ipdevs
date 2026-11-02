@@ -20,6 +20,7 @@ export type ProjectCaseStudy = {
   highlights: string[];
   metrics: string[];
   liveUrlEnvKey?: keyof ImportMetaEnv;
+  sourceUrl?: string;
   gallery: ProjectGalleryItem[];
 };
 

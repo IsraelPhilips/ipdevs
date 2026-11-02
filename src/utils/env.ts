@@ -7,6 +7,7 @@ const fallbackLinks = {
 
 const fallbackProjectUrls: Partial<Record<keyof ImportMetaEnv, string>> = {
   VITE_PROJECT_PRYMAGENT_URL: "https://prymagent.com",
+  VITE_PROJECT_RECRUITOS_URL: "https://recruit-os.israelphilips.space/",
   VITE_PROJECT_IWACUMO_URL: "https://www.iwacumo.com",
   VITE_PROJECT_PREPADI_URL: "http://www.prepadi.online",
   VITE_PROJECT_WORKIETECHIE_URL: "https://workietechie.com",
