@@ -8,6 +8,9 @@ import iwacumoStorefront from "../assets/projects/iwacumo/iwacumo-storefront.png
 import iwacumoSystemSettings from "../assets/projects/iwacumo/iwacumo-system-settings.png";
 import prymagentBillingDashboard from "../assets/projects/prymagent/prymagent-billing-dashboard-june-2026.png";
 import prymagentHomepage from "../assets/projects/prymagent/prymagent-homepage-june-2026.png";
+import gazelyLanding from "../assets/projects/gazely/gazely-landing.png";
+import gazelyWorkflow from "../assets/projects/gazely/gazely-workflow.png";
+import gazelyDesktop from "../assets/projects/gazely/gazely-desktop.png";
 import recruitOs00 from "../assets/projects/recruitos/recruit00.png";
 import recruitOs01 from "../assets/projects/recruitos/recruit01.png";
 import recruitOs02 from "../assets/projects/recruitos/recruit02.png";
@@ -114,6 +117,61 @@ export const projects: ProjectCaseStudy[] = [
         src: prymagentBillingDashboard,
         alt: "PrymAgent billing dashboard preview",
         note: "The dashboard view gives teams and service providers a clearer way to monitor invoices, clients, credits, and billing records.",
+      },
+    ],
+  },
+  {
+    slug: "gazely",
+    name: "Gazely",
+    eyebrow: "Live speech recognition for church presentations",
+    summary:
+      "A church presentation companion with a planned React frontend and C# desktop integration, using speech recognition and local scripture search to find Bible passages during a service and prepare them in EasyWorship 7.",
+    intro:
+      "Gazely listens to service audio, turns speech into text, and looks for spoken scripture references. It searches a local scripture index for candidate passages, then presents the match for an operator to review before preparing it in EasyWorship 7. The planned React interface includes a compact Mini overlay for monitoring live activity, with C# handling desktop integration.",
+    role:
+      "I built the speech-to-passage workflow, connecting live transcription, scripture reference detection, local semantic retrieval, and controlled EasyWorship actions. I am moving the interface to React while keeping C# responsible for desktop integration, and designed the operator review flow so recognition results remain suggestions until a person approves them.",
+    outcome:
+      "A working desktop prototype that can process live or replayed audio, surface scripture candidates, and prepare reviewed passages for the presentation workflow. A local 102-second church-audio replay confirmed the speech pipeline ran and produced four end-of-utterance turns; it did not establish transcription accuracy or verify audience-visible projection.",
+    challenge:
+      "The system has to recognize references in conversational speech, find the intended passage in the operator's installed scripture library, and keep up during a service. Speech recognition can fail or return uncertain text, while presentation software is a separate Windows application where an incorrect automatic action could put the wrong passage on screen.",
+    approach:
+      "The C# desktop integration streams audio through selectable speech-recognition engines and will connect to the React interface and EasyWorship. The current candidate adds a fallback path from NVIDIA Nemotron to Parakeet Realtime EOU 120M Q8_0 and then Whisper if an engine fails. These models transcribe speech; a separate scripture-reference parser and local semantic search turn the transcript into passage candidates. The models do not decide what goes on screen: an operator reviews the passage, and presentation actions pass through a guarded EasyWorship integration. Local runtime packages and scripture search support offline operation. The fallback and live-device transcript quality still need evaluation.",
+    stack: [
+      "React frontend (planned)",
+      "C# / .NET Windows desktop integration",
+      "Python speech worker",
+      "NVIDIA Nemotron · Parakeet Realtime EOU 120M Q8_0 · Whisper",
+      "Local semantic scripture search",
+      "EasyWorship 7 integration",
+    ],
+    tags: ["Church Technology", "AI-assisted Presentation", "Live Service Workflow"],
+    highlights: [
+      "Streams audio into speech recognition and turns transcripts into scripture-reference candidates",
+      "Uses local scripture search to retrieve passages for operator review",
+      "Falls back across Nemotron, Parakeet Realtime EOU, and Whisper when a speech engine fails",
+      "Connects to EasyWorship 7 with guarded prepare and presentation actions",
+      "Includes a compact Mini overlay for monitoring the live workspace",
+    ],
+    metrics: [
+      "Combines speech recognition, scripture parsing, and local retrieval in one workflow",
+      "Keeps candidate matches reviewable before presentation actions",
+      "A 102-second local audio replay confirmed runtime operation, not recognition accuracy",
+    ],
+    gallery: [
+      {
+        src: gazelyLanding,
+        alt: "Gazely landing page showing its church presentation companion",
+        note: "The landing page introduces Gazely and shows how it prepares scripture during a church presentation.",
+      },
+      {
+        src: gazelyWorkflow,
+        alt: "Gazely before and after workflow for finding and presenting scripture",
+        note: "The workflow illustrates the shift from manual lookup to reviewed scripture prepared in the presentation.",
+      },
+      {
+        src: gazelyDesktop,
+        alt: "Gazely desktop live workspace showing transcript, scripture detections, and selected passage",
+        note: "The live workspace brings the transcript, detected passages, and selected scripture together for the operator.",
       },
     ],
   },
