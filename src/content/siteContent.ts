@@ -154,6 +154,7 @@ export const projects: ProjectCaseStudy[] = [
       "Reduces manual passage lookup during live services",
       "Supports offline operation with local scripture data and speech runtimes",
     ],
+    liveUrlEnvKey: "VITE_PROJECT_GAZELY_URL",
     gallery: [
       {
         src: gazelyLanding,
