@@ -125,28 +125,28 @@ export const projects: ProjectCaseStudy[] = [
     name: "Gazely",
     eyebrow: "AI scripture companion",
     summary:
-      "An AI companion that catches spoken Bible references and prepares scripture in EasyWorship during live church services.",
+      "An AI companion that catches spoken Bible references and prepares scripture in the presentation software churches use.",
     intro:
-      "Gazely helps church media teams find and prepare scripture without losing focus on the service. It transcribes live audio, surfaces likely passages, and lets an operator review each match before sending it to EasyWorship 7.",
+      "Gazely helps church media teams follow the service while it listens for scripture references, finds likely passages, and prepares them for presentation. Teams can use automatic mode or stay hands-on with manual review and control.",
     role:
-      "I designed and built the end-to-end experience, from live speech processing and passage retrieval to operator review and EasyWorship controls.",
+      "I designed and built the end-to-end experience, from live speech processing and passage retrieval to automatic and operator-controlled presentation workflows.",
     outcome:
-      "A live-service workflow that turns spoken references into reviewable scripture suggestions and streamlines preparation in EasyWorship.",
+      "A live-service workflow that turns spoken references into scripture passages and prepares them for church presentation software, with automatic and manual operating modes.",
     challenge:
       "Media teams must catch scripture references in natural speech, find the right passage and translation, and prepare it while the service continues.",
     approach:
-      "The React interface and C# desktop app connect a Python ASR worker to EasyWorship. NVIDIA Nemotron, Parakeet Realtime EOU, and Whisper convert service audio into text, with fallback between engines. A semi-RAG pipeline combines scripture-reference parsing with semantic retrieval over a local Bible index to rank likely passages from transcript context. The operator reviews the result before preparing or presenting it.",
+      "The React interface and C# desktop app connect a Python ASR worker to church presentation software, starting with EasyWorship 7. NVIDIA Nemotron, Parakeet Realtime EOU, and Whisper convert service audio into text, with fallback between engines. A semi-RAG pipeline combines scripture-reference parsing with semantic retrieval over a local Bible index to rank likely passages using transcript context. Automatic mode handles eligible matches; manual mode gives the operator direct review and control.",
     stack: [
       "React · C#/.NET · Python",
       "ASR: NVIDIA Nemotron · Parakeet Realtime EOU · Whisper",
-      "Semi-RAG scripture retrieval · EasyWorship 7",
+      "Semi-RAG scripture retrieval · Church presentation integration",
     ],
     tags: ["Church Technology", "AI-assisted Presentation", "Live Service Workflow"],
     highlights: [
       "Transcribes live service audio with a multi-model ASR pipeline",
       "Combines scripture parsing and semantic retrieval to surface context-aware passage matches",
       "Searches a local Bible index for offline passage retrieval",
-      "Keeps passage review and EasyWorship presentation controls in the operator's hands",
+      "Supports automatic operation alongside manual review and presentation control",
       "Provides a compact Mini overlay for live monitoring",
     ],
     metrics: [
