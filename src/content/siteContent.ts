@@ -123,39 +123,36 @@ export const projects: ProjectCaseStudy[] = [
   {
     slug: "gazely",
     name: "Gazely",
-    eyebrow: "Live speech recognition for church presentations",
+    eyebrow: "AI scripture companion",
     summary:
-      "A church presentation companion with a planned React frontend and C# desktop integration, using speech recognition and local scripture search to find Bible passages during a service and prepare them in EasyWorship 7.",
+      "An AI companion that catches spoken Bible references and prepares scripture in EasyWorship during live church services.",
     intro:
-      "Gazely listens to service audio, turns speech into text, and looks for spoken scripture references. It searches a local scripture index for candidate passages, then presents the match for an operator to review before preparing it in EasyWorship 7. The planned React interface includes a compact Mini overlay for monitoring live activity, with C# handling desktop integration.",
+      "Gazely helps church media teams find and prepare scripture without losing focus on the service. It transcribes live audio, surfaces likely passages, and lets an operator review each match before sending it to EasyWorship 7.",
     role:
-      "I built the speech-to-passage workflow, connecting live transcription, scripture reference detection, local semantic retrieval, and controlled EasyWorship actions. I am moving the interface to React while keeping C# responsible for desktop integration, and designed the operator review flow so recognition results remain suggestions until a person approves them.",
+      "I designed and built the end-to-end experience, from live speech processing and passage retrieval to operator review and EasyWorship controls.",
     outcome:
-      "A working desktop prototype that can process live or replayed audio, surface scripture candidates, and prepare reviewed passages for the presentation workflow. A local 102-second church-audio replay confirmed the speech pipeline ran and produced four end-of-utterance turns; it did not establish transcription accuracy or verify audience-visible projection.",
+      "A live-service workflow that turns spoken references into reviewable scripture suggestions and streamlines preparation in EasyWorship.",
     challenge:
-      "The system has to recognize references in conversational speech, find the intended passage in the operator's installed scripture library, and keep up during a service. Speech recognition can fail or return uncertain text, while presentation software is a separate Windows application where an incorrect automatic action could put the wrong passage on screen.",
+      "Media teams must catch scripture references in natural speech, find the right passage and translation, and prepare it while the service continues.",
     approach:
-      "The C# desktop integration streams audio through selectable speech-recognition engines and will connect to the React interface and EasyWorship. The current candidate adds a fallback path from NVIDIA Nemotron to Parakeet Realtime EOU 120M Q8_0 and then Whisper if an engine fails. These models transcribe speech; a separate scripture-reference parser and local semantic search turn the transcript into passage candidates. The models do not decide what goes on screen: an operator reviews the passage, and presentation actions pass through a guarded EasyWorship integration. Local runtime packages and scripture search support offline operation. The fallback and live-device transcript quality still need evaluation.",
+      "The React interface and C# desktop app connect a Python ASR worker to EasyWorship. NVIDIA Nemotron, Parakeet Realtime EOU, and Whisper convert service audio into text, with fallback between engines. A semi-RAG pipeline combines scripture-reference parsing with semantic retrieval over a local Bible index to rank likely passages from transcript context. The operator reviews the result before preparing or presenting it.",
     stack: [
-      "React frontend (planned)",
-      "C# / .NET Windows desktop integration",
-      "Python speech worker",
-      "NVIDIA Nemotron · Parakeet Realtime EOU 120M Q8_0 · Whisper",
-      "Local semantic scripture search",
-      "EasyWorship 7 integration",
+      "React · C#/.NET · Python",
+      "ASR: NVIDIA Nemotron · Parakeet Realtime EOU · Whisper",
+      "Semi-RAG scripture retrieval · EasyWorship 7",
     ],
     tags: ["Church Technology", "AI-assisted Presentation", "Live Service Workflow"],
     highlights: [
-      "Streams audio into speech recognition and turns transcripts into scripture-reference candidates",
-      "Uses local scripture search to retrieve passages for operator review",
-      "Falls back across Nemotron, Parakeet Realtime EOU, and Whisper when a speech engine fails",
-      "Connects to EasyWorship 7 with guarded prepare and presentation actions",
-      "Includes a compact Mini overlay for monitoring the live workspace",
+      "Transcribes live service audio with a multi-model ASR pipeline",
+      "Combines scripture parsing and semantic retrieval to surface context-aware passage matches",
+      "Searches a local Bible index for offline passage retrieval",
+      "Keeps passage review and EasyWorship presentation controls in the operator's hands",
+      "Provides a compact Mini overlay for live monitoring",
     ],
     metrics: [
-      "Combines speech recognition, scripture parsing, and local retrieval in one workflow",
-      "Keeps candidate matches reviewable before presentation actions",
-      "A 102-second local audio replay confirmed runtime operation, not recognition accuracy",
+      "Moves from spoken reference to ranked scripture candidates in one workflow",
+      "Reduces manual passage lookup during live services",
+      "Supports offline operation with local scripture data and speech runtimes",
     ],
     gallery: [
       {
